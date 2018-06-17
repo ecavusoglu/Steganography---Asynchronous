@@ -6,7 +6,6 @@ const assert = require('assert');
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
-//TODO: add require()'s as necessary
 
 const MongoClient = require('mongodb').MongoClient;
 const util = require('util');
@@ -41,8 +40,7 @@ const exec = require("child_process").exec
  */
 
 
-function ImgStore(client, db) { //TODO: add arguments as necessary
-  //TODO
+function ImgStore(client, db) {
   this.client = client;
   this.db = db;
 }
@@ -81,7 +79,6 @@ const IMG_TYPES = [
  *  close any database connections.
  */
 async function close() {
-  //TODO
   this.client.close();
 }
 
@@ -97,7 +94,6 @@ async function close() {
  *    NOT_FOUND:   there is no stored image for name under group.
  */
 async function get(group, name, type) {
-  //TODO: replace dummy return value
 
   let temporaryId = toImgId(group, name, type);
 
@@ -138,7 +134,6 @@ async function get(group, name, type) {
  *    BAD_GROUP:   group is invalid (contains a NUL-character).
  */
 async function list(group) {
-  //TODO: replace dummy return value
 
   let badGroup = isBadGroup(group);
   if (badGroup){
@@ -186,7 +181,6 @@ async function list(group) {
  *    NOT_FOUND:   there is no stored image for name under group.
  */
 async function meta(group, name) {
-  //TODO: replace dummy return value
 
   let badGroup = isBadGroup(group);
   if(badGroup){
@@ -234,7 +228,6 @@ async function meta(group, name) {
  *
  */
 async function put(group, imgPath) {
-  //TODO
   let name = pathToNameExt(imgPath);
 
   let badGroup = isBadGroup(group);
